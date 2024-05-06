@@ -58,8 +58,89 @@
             <img src="static/images/icon.ico" alt="Icon" style="height:48px; width:48px;">
             Direct-a-Video: Customized Video Generation with User-Directed Camera Movement and Object Motion 
           </h1>
+          <!-- <h1 class="title is-1 publication-title">Direct-a-Video: Customized Video Generation with User-Directed Camera Movement and Object Motion </h1> -->
+          <div class="is-size-5 publication-authors">
+            <!-- Paper authors -->
+            <span class="author-block">
+              Shiyuan Yang</a><sup>1,3</sup>,
+            </span>
+            <span class="author-block">
+              Liang Hou
+                </a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://brotherhuang.github.io/" target="_blank">Haibin Huang</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="http://www.chongyangma.com/" target="_blank">Chongyang Ma</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              Pengfei Wan</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              Di Zhang</a><sup>2</sup>,
+            </span>
+            <span class="author-block"> 
+              <a href="https://faculty.tju.edu.cn/ChenXiaodong/en/index.htm" target="_blank">Xiaodong Chen</a><sup>3</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.cityu.edu.hk/stfprofile/jingliao.htm" target="_blank">Jing Liao</a><sup>1*</sup>,
+            </span>
+          </div>
 
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>City University of Hong Kong,</span>
+            <span class="author-block"><sup>2</sup>Kuaishou Technology,</span>
+            <span class="author-block"><sup>3</sup>Tianjin University</span>
+            <span class="eql-cntrb"><small><br><sup>*</sup>Corresponding author</small></span>
+          </div>
+          <div class="column has-text-centered">
+            <div class="publication-links">
 
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2402.03162"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+
+              <!-- ArXiv Link -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2402.03162" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+
+              <!-- Github link -->
+              <span class="link-block">
+                <a href="https://github.com/ysy31415/direct_a_video" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                </a>
+              </span>
+
+               <!-- Video link -->
+              <span class="link-block">
+                <a href="https://youtu.be/2s7m-dBimJw"
+                    class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              
         </div>
       </div>
     </div>
@@ -95,14 +176,13 @@
                 Recent text-to-video diffusion models have achieved impressive progress. 
                 In practice, users often desire the ability to control object motion and camera movement independently for customized video creation. 
                 However, current methods lack the focus on separately controlling object motion and camera movement in a decoupled manner, which limits the controllability and flexibility of text-to-video models. 
-                In this paper, we introduce Direct-a-Video, a system that allows users to independently specify motions for one or multiple objects and/or camera movements, as if directing a video. 
+                In this paper, we introduce Direct-a-Video, a system that allows users to independently specify motions for multiple objects as well as camera's pan and zoom movements, as if directing a video. 
                 We propose a simple yet effective strategy for the decoupled control of object motion and camera movement. 
                 Object motion is controlled through <b>spatial cross-attention</b> modulation using the model's inherent priors, requiring no additional optimization. 
                 For camera movement, we introduce new <b>temporal cross-attention</b> layers to interpret quantitative camera movement parameters. 
                 We further employ an augmentation-based approach to train these layers in a self-supervised manner on a small-scale dataset, eliminating the need for explicit motion annotation. 
                 Both components operate independently, allowing individual or combined control, and can generalize to open-domain scenarios. 
                 Extensive experiments demonstrate the superiority and effectiveness of our method.
-                Code will be made available upon acceptance.
             </p>
           </div>
         </div>
@@ -124,6 +204,7 @@
                   <tr>
                     <td colspan="3">
                       <p>
+                        Our framework synthesizes a video that aligns with the user-directed camera movement and object motion. 
                         The camera movement is learned in the training stage and the object motion is implemented in the inference stage.  
                         <b>Left</b>: During training, we apply augmentation to video samples to simulate camera movement using panning and zooming parameters. These parameters are embedded and injected into newly introduced temporal cross-attention layers as the camera movement  conditioning, eliminating the need for camera movement annotation.
                         <b>Right</b>: During inference, along with camera movement, user inputs a text prompt containing object words and associated box trajectories. We use spatial cross-attention modulation to guide the spatial-temporal placement of objects, all without additional optimization.
@@ -284,7 +365,23 @@
     </section>
     <!-- End video preload="auto"grid -->
 
-
+  <!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre>
+        <code>
+          @article{yang2024direct,
+            title={Direct-a-Video: Customized Video Generation with User-Directed Camera Movement and Object Motion},
+            author={Yang, Shiyuan and Hou, Liang and Huang, Haibin and Ma, Chongyang and Wan, Pengfei and Zhang, Di and Chen, Xiaodong and Liao, Jing},
+            journal={arXiv preprint arXiv:2402.03162},
+            year={2024}
+          }
+        </code>
+      </pre>
+    </div>
+  </section>
+  <!--End BibTex citation -->
 
 
   <section class="hero is-small">
